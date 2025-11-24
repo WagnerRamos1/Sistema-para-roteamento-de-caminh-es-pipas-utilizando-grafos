@@ -14,4 +14,13 @@ public class Grafo {
         ronda.imprimirAresta();
         }
     }
+    public Vertice getVertice (String nome) {
+        for (Vertice ronda : grafo) {
+            if (ronda.getNome().equalsIgnoreCase(nome)) {
+                return ronda;
+            }
+        }
+        System.out.println("Vértice não encontrado");
+        return null;
+    }
 }

@@ -11,13 +11,16 @@ public class Vertice {
     public String getNome() {
         return nome;
     }
-    public void adicionarAresta(Vertice destino, Vertice origem, double custo) {
-        Aresta aresta = new Aresta(destino, origem, custo);
+    public void adicionarAresta(Vertice destino, Integer custo) {
+        Aresta aresta = new Aresta(destino, custo);
         this.arestaVizinhos.add(aresta);
     }
     public void imprimirAresta() {
         for(Aresta aresta : arestaVizinhos) {
             System.out.println(getNome() + " --> " + aresta.getDestino().getNome() + " - Custo para viagem: " + aresta.getCusto() + "\n"); 
         }
+    }
+    public List<Aresta> getArestas() {
+        return arestaVizinhos;
     }
 }
